@@ -1,0 +1,16 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="libraries/bootstrap.css"/>
+		<script src="libraries/angular.min.js"></script>
+		<script src="popup.js"></script>
+	</head>
+	<body style="width:400px; padding:20px 20px;" ng-app="BlockSite" ng-controller="MainController" ng-csp="">
+        Websites:
+        <textarea ng-model="websites" ng-change="saveWebsites()" style="height:300px; width:300px;"></textarea>
+        <br>
+        Password:
+        <input type="text" ng-model="password" style="width:300px;"/>
+        <br><br>
+        <button ng-click="save()">Save</button>
+	</body>
+</html>

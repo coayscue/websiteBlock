@@ -1,0 +1,50 @@
+{
+    "name": "Website Block",
+    "version": "1.1",
+    "description": "Website Block.",
+    "permissions": [
+        "activeTab",
+        "identity",
+        "storage",
+        "tabs",
+        "cookies",
+        "https://*/"
+    ],
+    "content_scripts": [
+        {
+            "js": [
+                "contentScript.js"
+            ],
+            "matches": [
+                "<all_urls>"
+            ],
+            "all_frames": true
+        }
+    ],
+    "background": {
+        "scripts": [
+            "background.js"
+        ],
+        "persistent": false
+    },
+    "web_accessible_resources": [
+        "main.html",
+        "main.js",
+        "libraries/angular.min.js",
+        "libraries/bootstrap.css",
+        "libraries/jquery.min.js",
+        "128.png"
+    ],
+    "browser_action": {
+        "default_title": "Get Crunk",
+        "default_icon": "16.png",
+        "default_popup": "popup.html"
+    },
+    "icons": {
+        "16": "16.png",
+        "48": "48.png",
+        "128": "128.png"
+    },
+    "manifest_version": 2,
+    "content_security_policy": "default-src 'self' https://*.googleapis.com https://maxcdn.bootstrapcdn.com https://apis.google.com; style-src https://maxcdn.bootstrapcdn.com 'unsafe-inline';"
+}
